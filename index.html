@@ -477,7 +477,7 @@ function initUI() {
   // Fill version selector.
   let select = $("#select_version");
   let allVersions = [... (new Set(versions.map(v => parseInt(v[1])))).values()]
-                      .sort()
+                      .sort((a,b)=>a-b)
                       .reverse();
   for (var version of allVersions) {
     select.append("<option value=\""+version+"\" >"+version+"</option>");
